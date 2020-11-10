@@ -1,5 +1,5 @@
 # inter
 Projeto Interdisciplinar CEUNSP
-Site para verificar
+Site para teste criado em vscode
 
 https://feehexel.github.io/inter/

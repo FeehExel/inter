@@ -45,12 +45,14 @@ menu a:hover {
 .form-group label{
     font-weight: bold;
     font-size: 20px;
+    font-size: 16px;
 }
 
 .form-group label.right-inline{
     text-align: right;
     padding-right: 8px;
     padding-left: 8px;
+    width: auto;
 }
 
 .form-group .input-control{

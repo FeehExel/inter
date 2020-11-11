@@ -32,6 +32,9 @@ class Cliente{
         document.getElementById('email').value = cliente.email
         document.getElementById('nascimento').value = cliente.nascimento
         document.getElementById('observacoes').value = cliente.observacoes
+        document.getElementById('limite').value = cliente.limite
+        document.getElementById('utilizado').value = cliente.utilizado
+        document.getElementById('saldo').value = cliente.saldo
     }
 
     apaga(codigo){
@@ -59,7 +62,11 @@ class Cliente{
                     <td>${cliente.contato}</td>
                     <td>${cliente.email}</td>
                     <td>${cliente.nascimento}</td>
-                    <td>${cliente.observacoes}</td>             
+                    <td>${cliente.observacoes}</td>    
+                    <td>${cliente.limite}</td>
+                    <td>${cliente.utilizado}</td>
+                    <td>${cliente.saldo}</td>         
+
                     <td>
 
                         <button id = 'apagar' onClick = 'cliente.apaga(${cliente.codigo})'>
@@ -90,6 +97,10 @@ class Cliente{
             <th>Email Pessoal</th>
             <th>Nascimento</th>
             <th>Observações</th>
+            <th>Limite</th>
+            <th>Utilizado</th>
+            <th>Saldo</th>
+
          </thead>
          <tbody>${listagem}</tbody>
          </table>
@@ -123,7 +134,12 @@ document.getElementById('salvar').onclick = function(){
         contato:document.getElementById('contato').value,
         email:document.getElementById('email').value,
         nascimento:document.getElementById('nascimento').value,
-        observacoes:document.getElementById('observacoes').value
+        observacoes:document.getElementById('observacoes').value,
+        limite:document.getElementById('limite').value,
+        utilizado:document.getElementById('utilizado').value,
+        saldo:document.getElementById('saldo').value
+    
+
 
     }
     cliente.salva(registro)
@@ -131,4 +147,21 @@ document.getElementById('salvar').onclick = function(){
 //tratamos a listagem
 window.onload = function(){
     cliente.atualiza()
+}
+
+//tratamos a alteração no campo utilizado
+
+document.getElementById('utilizado').onchange = function(){
+    let limite = document.getElementById('limite').value
+    let utilizado = document.getElementById('utilizado').value
+
+    if(parseFloat(utilizado)>parseFloat(limite)){
+
+        alert(`o valor utilizado R$ ${'utilizado'} não pode ser maior que o limite de crédito R$ ${'limite'}`)
+        document.getElementById('utilizado').value = 0
+
+    }else{
+        saldo = (limite - utilizado)
+    }
+    document.getElementById('saldo').value = saldo.toFixed(2)
 }

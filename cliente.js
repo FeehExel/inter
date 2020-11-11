@@ -156,8 +156,8 @@ document.getElementById('utilizado').onchange = function(){
     let utilizado = document.getElementById('utilizado').value
 
     if(parseFloat(utilizado)>parseFloat(limite)){
-
-        alert(`o valor utilizado R$ ${'utilizado'} não pode ser maior que o limite de crédito R$ ${'limite'}`)
+        
+        alert(`O valor utilizado ${utilizado} não pode ser maior que o limite de crédito de ${limite}!`)
         document.getElementById('utilizado').value = 0
 
     }else{

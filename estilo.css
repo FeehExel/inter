@@ -33,7 +33,7 @@ menu a:hover {
 }
 
 .form{
-    background-color: #0b6fa4;
+    background-color: darkblue;
     color:#f1f1f1;
 }
 
@@ -64,7 +64,7 @@ menu a:hover {
 }
 
 button{
-    background-color: #0b6fa4;
+    background-color: darkred;
     color: aqua;
     font-size: 15px;
     padding: 5px;
@@ -93,7 +93,7 @@ table.paleBlueRows {
     background: #D0E4F5;
   }
   table.paleBlueRows thead {
-    background: #0B6FA4;
+    background: darkblue;
     border-bottom: 5px solid #FFFFFF;
   }
   table.paleBlueRows thead th {
